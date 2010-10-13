@@ -1,20 +1,6 @@
 " lodgeit.vim: Vim plugin for paste.pocoo.org
 " Maintainer:   Armin Ronacher <armin.ronacher@active-4.com>
-" Version:      0.2
-"
-" Options:
-"   g:lodgeit_url     Set the URL to a custom lodgeit instance.
-"   g:lodgeit_secure  If set to 1, you will be prompted for a password
-"   g:username        The username to be used if lodgeit is secured
-"
-" Usage:
-"   :Lodgeit    create a paste from the current buffer of selection
-"   :e <url>    download a paste. If you then use :Lodgeit you can
-"               reply to that paste.
-"
-" If you want to paste on ctrl + p just add this to your vimrc:
-" 	map ^P :Lodgeit<CR>
-" (where ^P is entered using ctrl + v, ctrl + p in vim)
+" Version:      0.3
 
 if exists("loaded_lodgeit")
     finish
@@ -224,6 +210,5 @@ else:
 
 endpython
 endfunction
-
 
 command! -range=0 -nargs=* Lodgeit :call s:Lodgeit(<line1>,<line2>,<count>,<f-args>)
