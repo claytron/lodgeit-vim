@@ -7,6 +7,12 @@ if exists("loaded_lodgeit")
 endif
 let loaded_lodgeit = 1
 
+" if there is no Python support, stop loading the plugin
+if !has('python')
+    echo "In order to use the Lodgeit plugin vim must be compiled with +python support"
+    finish
+endif
+
 " Initialize some variables
 if !exists("g:lodgeit_url")
     let g:lodgeit_url = "http://paste.pocoo.org"
